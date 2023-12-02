@@ -62,6 +62,37 @@ let Productos = {
 let Usuarios = {
   usuario1: { userData: "User", passwordData: "1234" }
 };
+let Venta = {
+  venta1: {
+    idVenta:1,
+    codpro:1,
+    nombrepro:"LAVADORA LG CARGA SUPERIOR 17KG WT17DV6 AI DD INTELIGENCIA ARTIFICIAL GRIS",
+    monto:799.99
+  },
+  venta2:{
+    idVenta:2,
+    codpro:2,
+    nombrepro:"Monitor Samsung LS24R35AFHNXZA IPS De 24 75hz FHD",
+    monto:499.99
+  },
+  venta3:{
+    idVenta:3,
+    codpro:3,
+    nombrepro:"Auriculares inalámbricos para juegos Corsair Virtuoso RGB - Sonido envolvente 7.1 de alta fidelidad con micrófono de calidad de transmisión - Auriculares de espuma viscoelástica",
+    monto:800.99
+  },
+  venta4:{
+    idVenta:4,
+    codpro:4,
+    nombrepro:"Licuadora Electrolux 700w con Tecnologia TruFlow (EBS30)",
+    monto:151.05
+  },
+};
+
+app.get('/GetVenta',(req,res) => {
+  const ventasobtenidas = Object.values(Venta)
+  res.json(ventasobtenidas)
+});
 
 app.get('/GetProduct', (req, res) => {
     const productosObtenidos = Object.values(Productos)
